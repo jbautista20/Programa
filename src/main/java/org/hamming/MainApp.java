@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 public class MainApp extends Application {
 
     private byte[] originalFileBytes;
-    private File activeFile; // Last loaded or generated file (for chaining operations)
+    private File activeFile; // Ultimo archivo cargado o generado (para operaciones de cambio)
 
     private TextFlow leftTextFlow = new TextFlow();
     private TextFlow rightTextFlow = new TextFlow();
@@ -30,9 +30,9 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Hamming Code File Protector - Cifrado XOR");
+        primaryStage.setTitle("PM-Hamming TIyC UNSL 2026 - MontenegroPino");
 
-        // Toolbars and Buttons
+        // toolbar
         Button btnLoad = new Button(" Cargar Archivo ");
         btnLoad.setOnAction(e -> loadFile(primaryStage));
 
@@ -59,7 +59,7 @@ public class MainApp extends Application {
         topBar.setPadding(new Insets(10));
         topBar.setAlignment(Pos.CENTER_LEFT);
 
-        // Center Text areas
+        // centrado de texto
         ScrollPane leftScroll = new ScrollPane(leftTextFlow);
         leftScroll.setFitToWidth(true);
         VBox leftBox = new VBox(new Label("Archivo Original / Referencia"), leftScroll);
@@ -70,7 +70,7 @@ public class MainApp extends Application {
         VBox rightBox = new VBox(new Label("Archivo Procesado / Visualización"), rightScroll);
         VBox.setVgrow(rightScroll, Priority.ALWAYS);
 
-        // Sinchronized scrolling
+        // scrolling sincronizado
         leftScroll.vvalueProperty().bindBidirectional(rightScroll.vvalueProperty());
 
         SplitPane splitPane = new SplitPane(leftBox, rightBox);
