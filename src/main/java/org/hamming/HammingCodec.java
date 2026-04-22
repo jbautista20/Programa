@@ -114,7 +114,7 @@ public class HammingCodec {
                     } else {
                         // Error doble: no se puede corregir de forma segura, pero como
                         // el requerimiento es un error max por modulo, esto en teoría 
-                        // no deberia ocurrir si solo introducimos max 1 error. 
+                        // no deberia ocurrir si solo introducimos max 1 error.
                         if (syndrome < N) {
                              stream[blockOffset + syndrome] ^= true;
                         }
