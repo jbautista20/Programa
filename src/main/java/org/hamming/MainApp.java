@@ -172,6 +172,7 @@ public class MainApp extends Application {
     private void unprotect(Stage stage, boolean correctErrors) {
         FileChooser fc = new FileChooser();
         fc.setTitle("Seleccione Archivo .HAx o .HEx");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Hamming Protegido", "*.HA1", "*.HA2", "*.HA3","*.HE1","*.HE2","*.HE3"));
         File f = fc.showOpenDialog(stage);
         if (f != null) {
             try {
